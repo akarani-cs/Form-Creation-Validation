@@ -41,5 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
             feedbackDiv.innerHTML = messages.join("<br>");
             feedbackDiv.style.color = "#dc3545";
         }
+
+        document.getElementById("form-feedback").innerHTML = messages.join("br");
     });
 });
