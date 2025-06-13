@@ -50,7 +50,8 @@ const form = document.getElementById('registration-form');
         } else {
             passwordError.textContent = '';
         }
-
+        
+        messages.push(error);
 
 
     
@@ -59,6 +60,15 @@ const form = document.getElementById('registration-form');
             // Clear any previous feedback
             feedbackDiv.textContent = '';
             feedbackDiv.className = 'Registration Successful!';
+            feedbackDiv.color ='#28a745'; // Green color for success feedback
+            feedbackDiv.style.display = 'block';
+
+        if  (isValid ===false){
+            // Show error messages
+            feedbackDiv.textContent = messages.join(' ')
+            feedbackDiv.className = 'error';
+            feedbackDiv.style.display = 'block';
+          }
 
             // Simulate form submission
             setTimeout(function() {
@@ -71,6 +81,7 @@ const form = document.getElementById('registration-form');
             feedbackDiv.textContent = 'Please fix the errors in the form.';
             feedbackDiv.className = 'error';
         }
+
 
 
 
