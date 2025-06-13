@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function(){
 
 
+const form = document.getElementById('registration-form');
     form.addEventListener('submit', function(event){
         event.preventDefault();//Prevent automatic form submission.
         
@@ -25,20 +26,13 @@ document.addEventListener("DOMContentLoaded", function(){
         let isValid = true;
         let messages = [];
 
-        // Password validation
-        if (passwordInput.length < 8) {
-            isValid = false;
-            passwordError.textContent = 'Password must be at least 8 characters long';
-        } else {
-            passwordError.textContent = '';
-        }
-
+   
         // username validation
-        if (usernameInput.Length < 3) {
+        if (usernameInput.length < 3) {
             isValid = false;
             usernameError.textContent = 'Username must be at least 3 characters long';
         } else {
-            passwordError.textContent = '';
+            usernameError.textContent = '';
         }
 
         // email validation
@@ -49,6 +43,15 @@ document.addEventListener("DOMContentLoaded", function(){
             emailError.textContent = '';
         }
 
+        // Password validation
+        if (passwordInput.length < 8) {
+            isValid = false;
+            passwordError.textContent = 'Password must be at least 8 characters long';
+        } else {
+            passwordError.textContent = '';
+        }
+
+
 
     
         // If the form is valid, submit it
@@ -58,8 +61,9 @@ document.addEventListener("DOMContentLoaded", function(){
             feedbackDiv.className = 'Registration Successful!';
 
             // Simulate form submission
-            setTimeout(() => {
-                feedbackDiv.textContent = 'Form submitted successfully!';
+            setTimeout(function() {
+                feedbackDiv.textContent = 'Registration Successful!';
+                feedbackDiv.className = 'success';
                 formElement.reset(); // Reset the form
             }, 1000); // Simulate a delay for submission
         } else {
@@ -75,6 +79,17 @@ document.addEventListener("DOMContentLoaded", function(){
 
     //submit event listener.    
     });
+
+
+
+
+
+
+
+
+
+
+
 
 
 //for the content loader.
